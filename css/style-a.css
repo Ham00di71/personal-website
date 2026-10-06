@@ -12,14 +12,20 @@
 }
 
 body{
-    margin:60px 80px 60px;
+    margin:124px 80px 80px;
+    background-color: #0C0C0E;
+    color:whitesmoke;
 }
 
+h1{
+    font-size:48px;
+    font-weight:900;
+}
 
 
 h2{
     font-size: 32px;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 h3{
@@ -27,8 +33,31 @@ h3{
     font-weight: 400;
 }
 
+h4{
+    font-size:20px;
+    font-weight:700px;
+}
+
 p{
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+nav{
+
+    position : fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+    width:100%;
+    padding:24px 80px 24px;
+    background-color: #040405;
+}
+
+hr{
+    border:none;
+    height:2px;
+    background-color: #64646D;
 }
 
 .section-a{
@@ -55,8 +84,14 @@ p{
     flex-direction:column;
 }
 
+.horizontal-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:16px;
+}
+
 a{
-    color:black;
+    color:whitesmoke;
 }
 
 
@@ -66,6 +101,63 @@ a{
     max-width: 100%;
 }
 
+.card{
+    /* background-color: #1D1D20; */
+    background-color: #080809;
+    max-width:300px;
+    /* border:7px solid navy; */
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.card:hover {
+    background-color:#05679B;
+    transition: 0.4s;
+}
+
+.inside-card{
+    display:flex;
+    flex-direction: column;
+    padding:24px 12px 24px;
+    width:100%;
+}
+
+.selected{
+    
+    .card{
+        border: 2px solid #05679B;
+        box-sizing: border-box;
+    }
+}
+
+.content-sidebar{
+    position:fixed;
+    top:140px;
+    left:80px;
+
+}
+
+.main-content{
+    position:static;
+    top:160px;
+    left:360px;
+}
+
+.huge{
+    font-size: 64px;
+    font-weight:900;
+    
+}
+
+.tiny{
+    font-size: 15px;
+}
+
+.sidebar-text{
+    font-size: 15px;
+}
 
 @media (max-width:760px) {
     body{
@@ -79,4 +171,15 @@ a{
     .section-a{
         flex-direction: column-reverse;
     }
+}
+
+#navbar-pro-max{
+    box-sizing: border-box;
+    height:300px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+#navbar-pro-max.closed{
+    height: 72px;
 }
